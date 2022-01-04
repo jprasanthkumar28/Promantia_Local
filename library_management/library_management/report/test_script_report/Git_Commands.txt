@@ -1,0 +1,21 @@
+git status
+
+git remote -v
+
+git checkout .
+
+git branch
+
+git checkout master
+
+git remote add gitorigin https://github.com/jprasanthkumar28/Promantia_Local.git
+
+git status
+
+git commit -m "Initial Commit" ((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))
+
+git add.
+
+git push gitorigin master
+
+git push origin branchname(to change the branch name)
