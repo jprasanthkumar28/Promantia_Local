@@ -9,7 +9,8 @@ def execute(filters=None):
 	columns = get_columns()
 	conditions = get_conditions(filters)
 	data = get_data(filters,conditions)
-	return columns, data
+	chart = get_chart_data(data)
+	return columns, data, None, chart
 
 def get_columns():
 	columns = [
@@ -55,8 +56,43 @@ def get_conditions(filters):
 	conditions=""
 	if filters.get('status'):
 		conditions += "and status = '{}'".format(filters.get('status'))
-	if filters.get('status'):
-		conditions += "and author = '{}'".format(filters.get('author'))
+	if filters.get('creation'):
+		conditions += "and DATE(creation) <= '{}'".format(filters.get('creation'))
 	return conditions
 
 
+def get_chart_data(data):
+	print("In Get Chart")
+
+	labels = []
+	labels1 = []
+	avail = []
+	issued = []
+	for con in data:
+		if con.status == 'Available':
+			avail.append(con.status)
+		else:
+			issued.append(con.status)
+	labels.append(len(avail))
+	labels1.append(len(issued))
+
+	return {
+		"data": {
+			'labels': ['Available', 'Issued'],
+			'datasets': [
+				{
+					"name": "Available",
+					"values": labels[:10]
+				},
+				{
+					"name": "Issued",
+					"values": labels1[:10]
+				}
+			]
+		},
+		"type": "bar",
+		"colors": ["#fc4f51","#ffd343"],
+		"barOptions": {
+			"stacked": False
+		}
+	}

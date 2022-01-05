@@ -11,6 +11,12 @@ app_license = "MIT"
 
 # Includes in <head>
 # ------------------
+app_include_js = "/assets/js/aka.min.js"
+
+doctype_js = {
+	"Customer" : "library_management/doctype/customer/customer.js"
+}
+
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/library_management/css/library_management.css"
@@ -89,13 +95,11 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Quotation": {
+		"before_submit": "library_management.library_management.doctype.quotation.quotation.on_submit"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -133,9 +137,9 @@ app_license = "MIT"
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-# 	"Task": "library_management.task.get_dashboard_data"
-# }
+override_doctype_dashboards = {
+ 	"Customer": "library_management.library_management.doctype.customer.customer_dashboard.get_dashboard_data"
+}
 
 # exempt linked doctypes from being automatically cancelled
 #

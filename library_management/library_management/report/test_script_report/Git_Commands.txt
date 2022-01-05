@@ -8,14 +8,19 @@ git branch
 
 git checkout master
 
+Pushing to GITHUB
+------------------------------------------------------------------------------------------------------
 git remote add gitorigin https://github.com/jprasanthkumar28/Promantia_Local.git
+
+git remote -v
+
+git checkout . (Checkout not needed files)
 
 git status
 
-git commit -m "Initial Commit" ((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))
-
 git add.
+
+git commit -m "Initial Commit" (Token-->(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))
 
 git push gitorigin master
 
-git push origin branchname(to change the branch name)
