@@ -14,9 +14,50 @@ app_license = "MIT"
 app_include_js = "/assets/js/aka.min.js"
 
 doctype_js = {
+	"Supplier" : "library_management/doctype/supplier/supplier.js",
 	"Customer" : "library_management/doctype/customer/customer.js"
+	# ,
+	# "Employee Deduction" : "library_management/doctype/employee_deduction/employee_deduction.js"
 }
 
+
+doctype_tree_js = {"Supplier" : "library_management/doctype/supplier/supplier_tree.js"}
+
+
+fixtures = ["Server Script",
+{"dt": "Custom Field",
+		"filters": [
+        [
+        "name","in",[
+		"Supplier-is_group",
+		"Supplier-parent_supplier"
+		]
+		]
+	]
+},
+{"dt": "Property Setter",
+		"filters":[
+	["name","in",[
+		"Supplier-address_contacts-label",
+		"Supplier-contact_html-permlevel",
+		"Item Supplier-supplier_part_no-hidden",
+		"Item Supplier-supplier_part_no-in_list_view",
+		"Customer-customer_name-in_list_view"	
+	]
+	]
+	
+]
+},
+{"dt": "Custom Field",
+		"filters":[
+	["name","in",[
+		"Customer-customer_test_field"
+	]
+	]
+	
+]
+}
+]
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/library_management/css/library_management.css"
@@ -98,29 +139,49 @@ doctype_js = {
 doc_events = {
 	"Quotation": {
 		"before_submit": "library_management.library_management.doctype.quotation.quotation.on_submit"
+	},
+	"Task": {
+		"before_save": "library_management.library_management.doctype.task.task.on_save_validation"
+	},
+	"Article": {
+		"before_save": "library_management.library_management.doctype.article.article.db_API"
 	}
 }
+
+# birthday_notify = [
+# 	"library_management.library_management.notification.birthday_notify.birthday",
+# ]
+
+
+# on_session_creation = [
+# 	"library_management.library_management.notification.birthday_notify.birthday",
+# ]
 
 # Scheduled Tasks
 # ---------------
 
 # scheduler_events = {
+# 	"cron": {
+# 		"0 10 * * *": [
+# 			"library_management.library_management.notification.birthday_notify.birthday",
+# 		]
+# 	}
+# }
 # 	"all": [
 # 		"library_management.tasks.all"
 # 	],
 # 	"daily": [
 # 		"library_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"library_management.tasks.hourly"
-# 	],
+# 	]
+	# "hourly": [
+	# 	"library_management.library_management.notification.birthday_notify.birthday",
+	# ],
 # 	"weekly": [
 # 		"library_management.tasks.weekly"
 # 	]
 # 	"monthly": [
 # 		"library_management.tasks.monthly"
 # 	]
-# }
 
 # Testing
 # -------

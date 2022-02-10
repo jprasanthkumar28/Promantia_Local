@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-01-19 16:40:06.259238",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "a",
+  "b",
+  "c",
+  "add_product"
+ ],
+ "fields": [
+  {
+   "fieldname": "a",
+   "fieldtype": "Int",
+   "label": "a"
+  },
+  {
+   "fieldname": "b",
+   "fieldtype": "Int",
+   "label": "b"
+  },
+  {
+   "fieldname": "c",
+   "fieldtype": "Int",
+   "label": "c"
+  },
+  {
+   "fieldname": "add_product",
+   "fieldtype": "Table",
+   "label": "Add Product",
+   "options": "Add Product"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-01-19 16:49:35.091860",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Add_Two",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

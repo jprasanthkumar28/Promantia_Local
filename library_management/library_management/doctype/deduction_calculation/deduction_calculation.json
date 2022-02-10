@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DC.###",
+ "creation": "2022-01-31 10:59:16.626419",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "recurring",
+  "onetime",
+  "total",
+  "actual_paid",
+  "balance"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recurring",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Recurring",
+   "read_only": 1
+  },
+  {
+   "fieldname": "onetime",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Onetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "default": "0.0",
+   "fieldname": "actual_paid",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Actual Paid"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Balance",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-02-10 15:49:56.865228",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Deduction Calculation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

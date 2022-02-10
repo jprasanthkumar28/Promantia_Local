@@ -16,7 +16,8 @@
   "isbn",
   "publisher",
   "section_break_8",
-  "description"
+  "description",
+  "signature"
  ],
  "fields": [
   {
@@ -65,12 +66,17 @@
   {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-12-22 10:38:48.988428",
+ "modified": "2022-01-25 12:52:11.973096",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -107,7 +113,6 @@
    "share": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC"
 }

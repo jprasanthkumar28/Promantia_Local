@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-01-19 16:48:47.153246",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "length",
+  "breadth",
+  "result"
+ ],
+ "fields": [
+  {
+   "fieldname": "length",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "length"
+  },
+  {
+   "fieldname": "breadth",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "breadth"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "result"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-01-19 16:51:03.125945",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Add Product",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

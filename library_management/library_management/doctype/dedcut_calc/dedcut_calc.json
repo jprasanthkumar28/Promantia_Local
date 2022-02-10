@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-02-08 12:42:59.086943",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deduction_name",
+  "deduction_type",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "deduction_name",
+   "fieldtype": "Select",
+   "label": "Deduction Name",
+   "options": "Traffic\npunishment"
+  },
+  {
+   "fieldname": "deduction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Deduction Type",
+   "options": "Recurring\nOnetime"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-02-08 12:46:00.033884",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Dedcut Calc",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

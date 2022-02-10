@@ -1,4 +1,25 @@
-API_Key ---> (PMAK-61d573ebee5b473dee8f846a-5e1b3bf61caa69aa0add36477b00e0f8ab)
+API_Key ---> (PMAK-61d573ebee5b473dee8f864informatics/frappe-bench/apps/informatics
+git checkout dev
+git pull origin dev
+bench migrate
+git remote -v
+git branch
+git checkout -b feat_print_format(branch name)
+git status
+cd ..(2 times)
+/frappe-bench$ bench --site site-name export-fixtures (or) bench export-fixtures
+(in fixtures folder, i have to check whether my code is there or not, don't remove anything in the fixtures folder)
+(in hooks.py file, i have to add the print format/doctype/report...anything...what i want to push that one)
+cd apps/informatics
+git status
+(modified files will come)
+git checkout file-name(if u want to discard changes, use this command),,more files...git checkout .
+git diff file-name(we will use this command for to differentiate between our code and already defined code)
+git add file-name(if u want to keep changes, use this command) (or) git add .
+git commit -m"[10536/Adding Print Format]"
+git push origin feat_print_format(branch name)a-5e1b3bf61caa69aa0add36477b00e0f8ab)
+
+f5bad6a76cd5184
 git status
 
 git remote -v
@@ -21,7 +42,7 @@ git status
 
 git add.
 
-git commit -m "Initial Commit" (Token-->(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))
+git commit -m "Initial Commit" (Token-->(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))
 
 git push firstorigin master
 

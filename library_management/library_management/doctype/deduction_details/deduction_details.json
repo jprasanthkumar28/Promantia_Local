@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "DD.###",
+ "creation": "2022-01-31 10:55:00.768212",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deduction_name",
+  "deduction_type",
+  "start_date",
+  "end_date",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "deduction_name",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Deduction Name",
+   "options": "\nTraffic Voilation\nRetention\nPunishment"
+  },
+  {
+   "fieldname": "deduction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Deduction Type",
+   "options": "\nOnetime\nRecurring"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-02-02 09:51:16.188653",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Deduction Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
