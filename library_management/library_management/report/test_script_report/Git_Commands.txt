@@ -26,7 +26,7 @@ git remote -v
 
 git checkout .
 
-git branch
+git branch (To add new branch git branch branch-name)
 
 git checkout master
 
@@ -40,9 +40,17 @@ git checkout . (Checkout not needed files)
 
 git status
 
-git add.
+git add .
 
-git commit -m "Initial Commit" (Token-->(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))
+git commit -m "11191-Cannot Add value error" (Token-->(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))
 
-git push firstorigin master
+git push origin assigned_to
 
+
+
+Token_Promantia --> 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
+
+
+----------------------------------------------------------------------------------------------------------------
+
+bench --site rang.local --force restore sites/rang.local/public/files/20220224_151557-rangsutra-demo_frappe_cloud-database.sql.gz
