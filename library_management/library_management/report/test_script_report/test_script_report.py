@@ -61,6 +61,7 @@ def get_conditions(filters):
 	return conditions
 
 
+
 def get_chart_data(data):
 	labels = []
 	date_per = []
