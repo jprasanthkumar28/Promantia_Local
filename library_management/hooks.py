@@ -20,6 +20,7 @@ doctype_js = {
 }
 
 
+
 doctype_tree_js = {"Supplier" : "library_management/doctype/supplier/supplier_tree.js"}
 
 
