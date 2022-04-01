@@ -62,36 +62,37 @@ def get_conditions(filters):
 
 
 def get_chart_data(data):
-	print("In Get Chart")
-
 	labels = []
-	labels1 = []
-	avail = []
-	issued = []
-	for con in data:
-		if con.status == 'Available':
-			avail.append(con.status)
-		else:
-			issued.append(con.status)
-	labels.append(len(avail))
-	labels1.append(len(issued))
+	date_per = []
+	completed = []
+	bill_per = []
+
+	for order in data:
+		labels.append(order.name)
+		date_per.append(order.date_percentage)
+		completed.append(order.per_delivered)
+		bill_per.append(order.per_billed)
 
 	return {
 		"data": {
-			'labels': ['Available', 'Issued'],
+			'labels': labels[:30],
 			'datasets': [
 				{
-					"name": "Available",
-					"values": labels[:10]
+					"name": "Date %",
+					"values": date_per[:30]
 				},
 				{
-					"name": "Issued",
-					"values": labels1[:10]
+					"name": "Delivered %",
+					"values": completed[:30]
+				},
+				{
+					"name": "Billed %",
+					"values": bill_per[:30]
 				}
 			]
 		},
 		"type": "bar",
-		"colors": ["#fc4f51","#ffd343"],
+		"colors": ["#fc4f51", "#ffd343","#00FF00"],
 		"barOptions": {
 			"stacked": False
 		}
