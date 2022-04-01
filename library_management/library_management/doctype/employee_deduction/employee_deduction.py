@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from datetime import datetime
 import datetime
 from datetime import date
 from dateutil.relativedelta import relativedelta
@@ -19,9 +20,12 @@ class EmployeeDeduction(Document):
         month = month + "-" + today[0]
 
         for row in self.deduction_calculation:
+            if row.total == 0:
+                frappe.db.sql("""delete from `tabDeduction Calculation` where name = %s""", row.name)  
+                # self.reload()
             bal = row.total - row.actual_paid
 
-            self.balance = bal
+            row.balance = bal
             if row.month == month:
                 self.month_total_balance = bal
 
@@ -33,17 +37,15 @@ class EmployeeDeduction(Document):
                     print(rec_month,"=", row.month, "\n\n\n")
                     bal = row.total - row.actual_paid
                     total_bal += bal
-    
 
         self.grand_total = total_bal
-
 
  
 @frappe.whitelist()
 def add_data(doc, deduction_type=None, s_date=None, amount=None):
 
     s_date = s_date.split('-')
-    
+
     month = datetime.date(1900, int(s_date[1]), 1).strftime('%b')
     month = month + "-" + s_date[0]
 
@@ -81,14 +83,6 @@ def update_recurring(doc, deduction_type=None, s_date=None, e_date=None, amount=
 def get_month(doc, month, bal):
     name = frappe.db.get_value('Deduction Calculation', {'parent': doc, 'month': month}, ['name'])
 
-    # name1 = frappe.db.get_list('Deduction Calculation', {'name': name }, ['month'])
-
-    # total = frappe.db.get_list('Deduction Calculation', {'parent': doc }, ['total'], pluck='total')
-    # print(name1, doc, month ,"\n\n\n\n")
-    # print(sum(total)+ int(bal), bal,"\n\nTotal\n")
-
-    # frappe.db.set_value('Deduction Calculation', doc , 'grand_total', sum(total)+int(bal))
-
     if name == None:
         return 0
     else:
@@ -97,10 +91,12 @@ def get_month(doc, month, bal):
 
 
 @frappe.whitelist()
-def get_end_date(doc, d_type, s_date):
-    e_date = datetime.date(2022, 2, 16) + relativedelta(day=31)
-    formatted_date = e_date.strftime("%d-%m-%Y")
+def get_end_date(e_date):
+    print(e_date)
+    # e_date = datetime.date(2022, 2, 16) + relativedelta(day=31)
+    # formatted_date = datetime.strptime(e_date, "%d-%m-%Y")
+    date = datetime.datetime.strptime(e_date, "%d-%m-%Y")
 
-    # frappe.db.set_value('Deduction Details', {'parent': doc} , 'end_date', formatted_date)
-    print(formatted_date, doc ,"\n\n\n")
-    return formatted_date
+    # # frappe.db.set_value('Deduction Details', {'parent': doc} , 'end_date', formatted_date)
+    print(type(date) ,"\n\n\n")
+    return date
