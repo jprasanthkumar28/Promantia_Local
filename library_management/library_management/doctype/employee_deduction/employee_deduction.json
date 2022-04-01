@@ -52,17 +52,19 @@
   {
    "fieldname": "grand_total",
    "fieldtype": "Float",
-   "label": "Total Balance"
+   "label": "Total Balance Till Date",
+   "read_only": 1
   },
   {
    "fieldname": "month_total_balance",
    "fieldtype": "Float",
-   "label": "Month Total Balance"
+   "label": "Total Balance Of Current Month",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-02-10 11:03:23.698717",
+ "modified": "2022-02-11 13:26:18.571339",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Employee Deduction",
