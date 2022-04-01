@@ -16,9 +16,9 @@ app_include_js = "/assets/js/aka.min.js"
 doctype_js = {
 	"Supplier" : "library_management/doctype/supplier/supplier.js",
 	"Customer" : "library_management/doctype/customer/customer.js"
-	# ,
 	# "Employee Deduction" : "library_management/doctype/employee_deduction/employee_deduction.js"
 }
+
 
 
 doctype_tree_js = {"Supplier" : "library_management/doctype/supplier/supplier_tree.js"}
