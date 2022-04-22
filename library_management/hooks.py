@@ -23,7 +23,6 @@ doctype_js = {
 
 doctype_tree_js = {"Supplier" : "library_management/doctype/supplier/supplier_tree.js"}
 
-
 fixtures = ["Server Script",
 {"dt": "Custom Field",
 		"filters": [
@@ -35,6 +34,8 @@ fixtures = ["Server Script",
 		]
 	]
 },
+
+
 {"dt": "Property Setter",
 		"filters":[
 	["name","in",[
